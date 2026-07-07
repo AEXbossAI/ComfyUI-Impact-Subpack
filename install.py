@@ -21,7 +21,7 @@ if model_path is None:
 ultralytics_bbox_path = os.path.join(model_path, "ultralytics", "bbox")
 ultralytics_segm_path = os.path.join(model_path, "ultralytics", "segm")
 
-if not os.path.exists(os.path.join(subpack_path, '..', 'skip_download_model')):
+if False:  # NEUTERED: без внешнего скачивания yolo с huggingface.co на Salad
     if not os.path.exists(ultralytics_bbox_path):
         os.makedirs(ultralytics_bbox_path)
 
