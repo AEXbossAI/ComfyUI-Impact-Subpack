@@ -8,6 +8,11 @@ import os, folder_paths
 _u = os.path.join(folder_paths.models_dir, "ultralytics")
 os.makedirs(os.path.join(_u, "bbox"), exist_ok=True)
 os.makedirs(os.path.join(_u, "segm"), exist_ok=True)
+import shutil
+_src = os.path.join(folder_paths.models_dir, "loras", "face_yolov8s.pt")
+_dst = os.path.join(_u, "bbox", "face_yolov8s.pt")
+if os.path.exists(_src) and not os.path.exists(_dst):
+    shutil.copy(_src, _dst)
 
 import importlib
 import logging
