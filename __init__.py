@@ -4,6 +4,10 @@
 @nickname: Impact Subpack
 @description: This extension provides UltralyticsDetectorProvider node
 """
+import os, folder_paths
+_u = os.path.join(folder_paths.models_dir, "ultralytics")
+os.makedirs(os.path.join(_u, "bbox"), exist_ok=True)
+os.makedirs(os.path.join(_u, "segm"), exist_ok=True)
 
 import importlib
 import logging
